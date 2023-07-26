@@ -1,5 +1,6 @@
 from FuncionPDF import *
 from DatosEstaticos import *
+from FuncionQR import *
 listaNombres = []
 listaEdades = []
 def menu():
