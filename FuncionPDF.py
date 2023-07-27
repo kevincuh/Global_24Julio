@@ -1,10 +1,14 @@
 from reportlab.pdfgen import canvas
-from FuncionQR import *#--------------
+from FuncionQR import *
+import datetime#--------------
+import locale#--------------
+locale.setlocale(locale.LC_ALL, '')#--------------
 ruta = "C:/Users/Kevo/Escritorio/Modularidad python/prueba funciones/"
-nombreArchivo = ruta + "reporteGlobal.pdf"
-nombreQR = ruta + "miQR.png"#--------------
+nombreQR = ruta + "miQR.png"
 def generarPDF(listaNombres, listaEdades):
-    generarQR(nombreQR,"hola desde funcion")#--------------
+    fecha_actual = datetime.datetime.now()#--------------
+    nombreArchivo = ruta + "reporteGlobal_"+fecha_actual.strftime('%d_%m_%Y_%H_%M_%S')+".pdf"
+    generarQR(nombreQR,"hola desde funcion")
     c = canvas.Canvas(nombreArchivo)
     xInicial = 200
     yInicial = 700
